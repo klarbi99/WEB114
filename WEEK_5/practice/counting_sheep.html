@@ -1,0 +1,54 @@
+<!-- Name: Koceila Larbi -->
+<!-- Date: 04/05/2026 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting Sheep</title>
+    <style>
+        body
+            {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                font-family: arial;
+            }
+        section
+            {
+                margin-top: 3rem;
+                & > div
+                    {
+                        font-size: 10rem;
+                        margin-inline: auto;
+                        width: min-content;
+                    }
+                & h1, & p
+                    {
+                        text-align: center;
+                    }
+            }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            🐑
+        </div>
+        <h1>Counting Sheep Practice</h1>
+        <p>Open the developer console .</p>
+    </section> 
+
+    <script>
+        
+        let number = Number(prompt("How many sheeps do you want to count ? :  "));
+        let counter = 1;
+        while (counter <= number){
+          console.log(`${counter} sheep`);
+          counter++;
+        }
+        console.log("zZzZzZzZzZ")
+    </script>
+</body>
+</html>
