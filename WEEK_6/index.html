@@ -1,0 +1,122 @@
+<!--Name: Koceila Larbi-->
+<!--Date: 04/12/2026 -->
+
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Week 6 - Calculate Average Weekly Gas</title>
+    </head>
+    
+    <body>
+    
+        <h1>What is the purpose of a function?</h1>
+        <p>A function is a reusable block of code designed to perform a specific task. Functions help organize code, reduce repetition, and make programs easier to read and maintain. You can call a function whenever you need it instead of rewriting the same code over and over.</p>
+        <p>Click F12 to see the console messages.</p>
+    
+        <script>
+            // global variables
+            var entryCount = 0;
+            var gasTotal = 0;
+    
+            // step 1 - prompt for name
+            var username = prompt("Enter your name");
+    
+            // step 2 - validate name (cancel or empty)
+            if (username === null) {
+                alert("You cancelled the name prompt.");
+            } else if (username.trim() === "") {
+                alert("You must type a name.");
+            } else {
+                // step 3 - call the function
+                var average = calcGasAvg();
+    
+                // step 4 - check if user cancelled gas entry
+                if (average === null) {
+                    alert("You cancelled entering gas totals.");
+                } else {
+                    // step 8a/b - show average or total
+                    if (entryCount === 0) {
+                        alert("No gas totals were entered.");
+                    } else {
+                        var message;
+                        if (entryCount === 1) {
+                            message = username + "'s gas total is $" + gasTotal.toFixed(2);
+                        } else {
+                            message = username + "'s average weekly gas bill is $" + average.toFixed(2);
+                        }
+                        alert(message);
+                    }
+    
+                    // step 5/8c - show entry count
+                    var entryMessage;
+                    if (entryCount === 0) {
+                        entryMessage = "No gas totals were entered.";
+                    } else if (entryCount === 1) {
+                        entryMessage = "You entered 1 gas total.";
+                    } else {
+                        entryMessage = "You entered " + entryCount + " gas totals.";
+                    }
+                    alert(entryMessage);
+                }
+            }
+    
+            // function declaration - calcGasAvg
+            function calcGasAvg() {
+                // A - create input variable
+                var input;
+    
+                // B - prompt for first gas total
+                input = prompt("Enter your first week's gas total. Enter -1 when you are done.");
+    
+                // C - validate cancel
+                if (input === null) {
+                    return null;
+                }
+    
+                // convert string to number
+                var weeklyGas = parseFloat(input);
+    
+                // D - while loop until -1
+                while (weeklyGas !== -1) {
+    
+                    // E - validate input is a number
+                    if (isNaN(weeklyGas)) {
+                        alert("Please enter a valid number.");
+                        // ask again for same entry
+                        input = prompt("Enter your first week's gas total. Enter -1 when you are done.");
+                        if (input === null) {
+                            return null;
+                        }
+                        weeklyGas = parseFloat(input);
+                        continue;
+                    }
+    
+                    // F - add to total and increment count
+                    gasTotal += weeklyGas;
+                    entryCount++;
+    
+                    // G - prompt for next gas total
+                    input = prompt("Enter your next week's gas total. Enter -1 when you are done.");
+                    if (input === null) {
+                        return null;
+                    }
+                    weeklyGas = parseFloat(input);
+                }
+    
+                // H - calculate and return average
+                var average;
+                if (entryCount > 0) {
+                    average = gasTotal / entryCount;
+                } else {
+                    average = 0;
+                }
+                return average;
+            }
+        </script>
+    
+    </body>
+    
+</html>
