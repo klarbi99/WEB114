@@ -10,7 +10,7 @@
     <body>
         <header id="header">
             <h3><span>M</span>Quiz</h3>
-            <a href="http://koceila.com" class="btn-dark btn-md"> My website </a>
+            <a href="http://koceila.com" class="btn-md">Visit My Website ➝</a>
         </header>
         <main>
             
@@ -78,86 +78,49 @@
             
                 <div class="about_frame_content">
             
-                    <h2>About This Project</h2>
-                    <p class="about_frame_intro">
-                        This is my final JavaScript project a math quiz game.
-                        I chose this idea because it was the first thing I ever built when I started coding as a beginner.
-                        This time I already know the process, so I wanted to come back to it and build it the right way.
-                        The player picks a difficulty level, answers math questions before the timer runs out,
-                        and gets a score at the end. Here is how I built it with JavaScript.
+                    <div class="about_frame_badge">Final Project</div>
+            
+                    <h2 class="about_frame_title">MQuiz</h2>
+                    <p class="about_frame_subtitle">A math quiz game built with HTML, CSS, and JavaScript.</p>
+            
+                    <div class="about_frame_info">
+            
+                        <div class="about_frame_info_item">
+                            <span class="about_frame_info_label">Name</span>
+                            <span class="about_frame_info_value">Koceila Larbi</span>
+                        </div>
+                        <div class="about_frame_info_item">
+                            <span class="about_frame_info_label">Year</span>
+                            <span class="about_frame_info_value">2026</span>
+                        </div>
+                        
+                        <div class="about_frame_info_item">
+                            <span class="about_frame_info_label">Class</span>
+                            <span class="about_frame_info_value">WEB114</span>
+                        </div>
+            
+                        <div class="about_frame_info_item">
+                            <span class="about_frame_info_label">School</span>
+                            <span class="about_frame_info_value">
+                                Johnson County Community College
+                            </span>
+                        </div>
+            
+                        <div class="about_frame_info_item">
+                            <span class="about_frame_info_label">Assignment</span>
+                            <span class="about_frame_info_value">Final Project</span>
+                        </div>
+            
+                    </div>
+            
+                    <p class="about_frame_description">
+                        The player picks a difficulty level [easy, normal, or hard]. 
+                        Each level has its own timer, number of questions, and operators. 
+                        The player answers each question by selecting one of the choices before the timer runs out. 
+                        At the end, the player gets a score showing how many questions they answered correctly.
                     </p>
             
-                    <div class="about_frame_sections">
-            
-                        <div class="about_frame_section">
-                            <h3>1. Global Variables</h3>
-                            <p>
-                                Variables like <code>chosenLevel</code>, <code>score</code>, and <code>timer</code> 
-                                are declared at the top so every function can access and update them.
-                            </p>
-                        </div>
-                        
-                        <div class="about_frame_section">
-                            <h3>2. Switching Between Screens</h3>
-                            <p>
-                                All four screens exist in the HTML at once. I use <code>switchFrame()</code> 
-                                to show one and hide the rest using <code>style.display</code>.
-                            </p>
-                        </div>
-                        
-                        <div class="about_frame_section">
-                            <h3>3. Generating Random Questions</h3>
-                            <p>
-                                <code>generateQuiz()</code> creates two random numbers, picks a random operator, 
-                                calculates the answer, then generates wrong choices with the same digit length and shuffles them all.
-                            </p>
-                        </div>
-                        
-                        <div class="about_frame_section">
-                            <h3>4. Rendering the Quiz</h3>
-                            <p>
-                                <code>renderQuiz()</code> builds the HTML using template literals 
-                                and injects it into the page with <code>innerHTML</code>.
-                            </p>
-                        </div>
-                        
-                        <div class="about_frame_section">
-                            <h3>5. The Countdown Timer</h3>
-                            <p>
-                                <code>setInterval()</code> counts down every second. When it hits 0 
-                                it stops with <code>clearInterval()</code> and moves to the next question.
-                            </p>
-                        </div>
-                        
-                        <div class="about_frame_section">
-                            <h3>6. Handling the Player's Answer</h3>
-                            <p>
-                                I use <code>addEventListener('change', handler, { once: true })</code> 
-                                so the player can only select once. The timer stops immediately and answers are highlighted.
-                            </p>
-                        </div>
-                        
-                        <div class="about_frame_section">
-                            <h3>7. Closures</h3>
-                            <p>
-                                <code>handleAnswer</code> is defined inside <code>main()</code> so it can access 
-                                <code>currentQuiz</code> directly — no global variable needed.
-                            </p>
-                        </div>
-                        
-                        <div class="about_frame_section">
-                            <h3>8. Score and Progress</h3>
-                            <p>
-                                <code>score</code> increments on each correct answer. 
-                                A dot in the header turns green or red after each question to show the player's progress.
-                            </p>
-                        </div>
-            
-                    </div>
-            
-                    <div class="about_frame_footer">
-                        <button id="aboutFrameBackBtn" class="btn-md btn-dark">← Back to Home</button>
-                    </div>
+                    <button id="aboutFrameBackBtn" class="btn-md btn-dark about_frame_back">Go Back</button>
             
                 </div>
             

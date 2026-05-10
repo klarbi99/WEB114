@@ -54,6 +54,7 @@ const levelNormalBtn = document.getElementById('levelNormalBtn');
 const levelHardBtn = document.getElementById('levelHardBtn');
 const scoreFrameExit = document.getElementById('scoreFrameExit');
 const scoreFrameStartOver = document.getElementById('scoreFrameStartOver');
+const aboutFrameBackBtn = document.getElementById('aboutFrameBackBtn');
 
 const aboutBtn = document.getElementById('aboutBtn');
 
@@ -117,6 +118,9 @@ aboutBtn.addEventListener('click', () => {
   switchFrame('about');
 });
 
+aboutFrameBackBtn.addEventListener('click', () => {
+  switchFrame('welcome');
+});
 
 
 /* --------------handle close and open modal------------- */

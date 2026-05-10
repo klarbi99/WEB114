@@ -128,7 +128,15 @@ a
             color: var(--primary-color);
         }
 
+#header a
+        {
+            color: black;
+        }
 
+#header a:hover
+        {
+            color: var(--secondary-color);
+        }
 
 /* ---------------------Footer styles ------------------*/
 #footer
@@ -334,7 +342,7 @@ a
             width: 100%;
             transform: translateX(calc(var(--percentage) - 100%));
             transform-origin: left;
-            background: var(--primary-color);
+            background: var(--secondary-color);
             border-radius: 999px;
             
         }
@@ -360,8 +368,6 @@ a
             letter-spacing: 0.5rem;
             background: white;
             padding: 1.5rem 3rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             text-align: center;
         }
 
@@ -452,61 +458,94 @@ a
 #aboutFrame
         {
             display: none;
+            align-items: center;
+            justify-content: center;
         }
 
 .about_frame_content
         {
-            max-width: 800px;
+            max-width: 560px;
+            width: 100%;
             margin-inline: auto;
             display: flex;
             flex-direction: column;
-            gap: 2rem;
-        }
-
-.about_frame_intro
-        {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #444;
-        }
-
-.about_frame_sections
-        {
-            display: flex;
-            flex-direction: column;
+            align-items: center;
             gap: 1.5rem;
+            text-align: center;
         }
 
-.about_frame_section
+.about_frame_badge
         {
-            background: var(--secondary-background-color);
-            padding: 1.2rem 1.5rem;
-            border-radius: 0.3rem;
+            background: var(--primary-color);
+            color: black;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            padding: 0.3rem 1rem;
+            border-radius: 999px;
         }
 
-.about_frame_section h3
+.about_frame_title
         {
-            margin-bottom: 0.6rem;
+            font-size: 3rem;
             color: var(--dark-color);
         }
 
-.about_frame_section p
+.about_frame_subtitle
+        {
+            color: #666;
+            font-size: 1rem;
+        }
+
+.about_frame_info
+        {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding: 3rem;
+        }
+
+.about_frame_info_item
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.9rem 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+.about_frame_info_item:last-child
+        {
+            border-bottom: none;
+        }
+
+.about_frame_info_label
+        {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08rem;
+            color: #999;
+            font-weight: bold;
+        }
+
+.about_frame_info_value
+        {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+.about_frame_description
         {
             font-size: 1rem;
             line-height: 1.8;
-            color: #444;
+            color: #555;
+            text-align: center;
         }
 
-.about_frame_section code
+.about_frame_back
         {
-            background: #e0e0e0;
-            padding: 0.1rem 0.4rem;
-            border-radius: 0.2rem;
-            font-size: 0.9rem;
-            font-family: monospace;
-        }
-
-.about_frame_footer
-        {
-            margin-top: 1rem;
+            margin-top: 0.5rem;
         }
