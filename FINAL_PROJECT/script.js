@@ -260,6 +260,13 @@ function disableInputs()
   document.querySelectorAll('input[name="answer"]').forEach(input => input.disabled = true);
 }
 
+//* update the score page 
+function updateScorePage()
+{
+  const scoreFrameAnswerCount = document.getElementById('scoreFrameAnswerCount');
+  scoreFrameAnswerCount.innerHTML = `${score} out of ${levelData[chosenLevel].quizCount}`;
+}
+
 /* ----------------functions after the user reaction (selected answer)--------------- */
 
 function highlightAnswer(selectedIndex, correctAnswerIndex) 
@@ -282,6 +289,7 @@ function startGame()
   // render element that don't need to be updated each quiz
   renderProgressList(levelData[chosenLevel].quizCount);
   document.getElementById('gameFrameHeaderLevel').innerHTML = chosenLevel;
+  score = 0;
   main();
 }
 
@@ -290,6 +298,7 @@ function main()
   // redirect to score frame if quiz count is exceeded
   if (currentQuizCount >= levelData[chosenLevel].quizCount)
   {
+    updateScorePage();
     switchFrame('score');
     return;
   }
@@ -330,7 +339,7 @@ function main()
     // handle the correct and wrong answer
     if (selectedIndex === currentQuiz.correctAnswerIndex)
       {
-      score++;
+        score++;
         styleProgressListItem(currentQuizCount, 'correct');
       } 
     else 
